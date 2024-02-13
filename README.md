@@ -1,4 +1,4 @@
-## Generate a Valentine's Day Poem with AI!
+## Generate a Personalized Valentine's Day Poem w/ LLMs!
 ![screenshot of app](appscreenshot.png)
 
 #### Prerequisites
