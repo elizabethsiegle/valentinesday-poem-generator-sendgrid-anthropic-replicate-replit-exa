@@ -22,15 +22,18 @@ anthropic = Anthropic(
 
 
 def main():
-    st.title("Love Poem Generator w/ Astrology❤️ 💌") 
-    st.write("Built w/ Anthropic, SendGrid, Streamlit, && Replicate") 
-    image = Image.open('pikalove.png')
+    st.title("Poems for your Boo👻 ❤️ 💌") 
+    st.write("Built w/ Anthropic, SendGrid, Streamlit, Exa, && Replicate") 
+    image = Image.open('ghostheart.png')
     st.image(image)
 
     receiver_name = st.text_input("Poem receiver name")
+    jasonmomoaslider = st.select_slider(
+    'How much do you like them on a scale from just a friend to Jason Momoa', options=['just a friend', 'coffee shop crush', 'hot for a coworker', 'top of the roster', 'the love of your life', 'Jason Momoa'])
+    st.write("You like this person ", jasonmomoaslider, 'on a scale of 0 to Jason Momoa')
     receiver_description = st.text_area(
-    "Describe the person receiving the poem",
-    "What do they like?"
+      "What is the vibe ✨ of this person",
+      "Cheugy Millennial Woman who loves Taylor Swift and saying 'Slay' but it never sounds right. "
     )
     model_toggle = st.radio("What LLM would you like to use", # lol it rhymes
       [":rainbow[llama-2-70b-chat]", "***Claude***"],
@@ -89,10 +92,9 @@ def main():
                 newPronouns = completion1.completion
 
                 MAIN_PROMPT= f"""
-Please make me laugh by writing a short, silly, lighthearted, complimentary, lovey-dovey poem that rhymes about the following person named {receiver_name}. 
+Please make me laugh by writing a short, silly, lighthearted, complimentary, lovey-dovey poem that rhymes about the following person named {receiver_name}. I like this person {jasonmomoaslider} on a scale of 0 to 100--the closer to 100, the saucier the poem should be. The closer to 0, the more platonic the poem should be.
 <receiver_description>{newPronouns}</receiver_description>. 
-I would enjoy it if the poem also jokingly included the common characteristics of a person that has the astrological sign of {astrology_sign}
-                    and include {addons}. 
+I would enjoy it if the poem also jokingly included the common characteristics of a person that has the astrological sign of {astrology_sign} and include {addons}. 
 Return only the poem where each new line ends with a new line character.
 """
 
@@ -122,7 +124,8 @@ Return only the poem where each new line ends with a new line character.
 
                 MAIN_PROMPT= f"""
                 With no preamble, please make me laugh by writing a short, silly, lighthearted, complimentary, lovey-dovey poem that rhymes about the following person named {receiver_name}. 
-<receiver_description>{newpronounsblurb}</receiver_description>. 
+<receiver_description>{newpronounsblurb}</receiver_description>.
+I like this person {jasonmomoaslider} on a scale of 0 to 100--the closer to 100, the saucier the poem should be. The closer to 0, the more platonic the poem should be.
 I would enjoy it if the poem also jokingly included the common characteristics of a person that has the astrological sign of {astrology_sign}
                 and something about {addons}. 
                 Return only the poem. 
@@ -147,7 +150,7 @@ I would enjoy it if the poem also jokingly included the common characteristics o
             output_pic = replicate.run(
                 "stability-ai/stable-diffusion:ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4",
                 input={
-                    "prompt": f"Please generate a G-rated cute image of a {astrology_sign} including hearts that I can show my manager",
+                    "prompt": f"Please generate a G-rated cute image of a {astrology_sign} including hearts that I can show my grandma",
                     "width": 448,
                     "height": 448,
                     "negative_prompt": "nsfw",

@@ -1,5 +1,5 @@
 ## Generate a Valentine's Day Poem with AI!
-![screenshot of app](image.png)
+![screenshot of app](appscreenshot.png)
 
 #### Prerequisites
 - Twilio SendGrid account to send an email - [make an account here](https://signup.sendgrid.com/) and [make an API key here](https://app.sendgrid.com/settings/api_keys) 
