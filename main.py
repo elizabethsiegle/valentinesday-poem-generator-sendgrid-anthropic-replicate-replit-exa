@@ -53,9 +53,9 @@ def main():
     )
     st.write('You selected:', astrology_sign)
 
-    user_email = st.text_input("Email to send love poem to📧", "lol@gmail.com")
+    user_email = st.text_input("Email to send love poem and gift recs to📧", "lol@gmail.com")
     poem = ''
-    if st.button('Generate a poem w/ AI 🧠🤖') and astrology_sign and addons and model_toggle and receiver_name and receiver_description and user_email:
+    if st.button('Generate a poem and gift ideas w/ AI 🧠🤖') and astrology_sign and addons and model_toggle and receiver_name and receiver_description and user_email:
         with st.spinner('Processing📈...'):
             exa = Exa(EXA_API_KEY)
             exa_resp = exa.search(
@@ -110,7 +110,7 @@ Return only the poem where each new line ends with a new line character.
 
             elif model_toggle == ":rainbow[llama-2-70b-chat]":
                 editpronouns = replicate.run(
-                    "meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",
+                    "meta/llama-2-70b-chat:02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3",r
                     input={
                         "prompt": COPY_PROMPT,
                         "max_new_tokens": 700
@@ -150,10 +150,9 @@ I would enjoy it if the poem also jokingly included the common characteristics o
             output_pic = replicate.run(
                 "stability-ai/stable-diffusion:ac732df83cea7fff18b8472768c88ad041fa750ff7682a21affe81863cbe77e4",
                 input={
-                    "prompt": f"Please generate a G-rated cute image of a {astrology_sign} including hearts that I can show my grandma",
+                    "prompt": f"Please generate a G-rated cute image of a {astrology_sign} including hearts that I can show my toddler cousin and my grandma",
                     "width": 448,
-                    "height": 448,
-                    "negative_prompt": "nsfw",
+                    "height": 448
                 }
             )
             print(output_pic[0])
