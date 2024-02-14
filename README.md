@@ -1,7 +1,7 @@
 ## Generate a Personalized Valentine's Day Poem w/ LLMs!
 ![screenshot of app](appscreenshot.png)
 
-S/o to S/o [Daniel Kim](https://www.twitter.com/learnwdaniel) for the “just a friend” to Jason Momoa [streamlit](twitter.com/streamlit) slider and general prose edits, [Sarah Chieng](twitter.com/SarahChieng) for the best [Exa AI](https://twitter.com/ExaAILabs) API support🔥, and [Kevin Leffew](https://twitter.com/kleffew94) for the idea
+S/o to [Daniel Kim](https://www.twitter.com/learnwdaniel) for the “just a friend” to Jason Momoa [streamlit](twitter.com/streamlit) slider and general prose edits, [Sarah Chieng](twitter.com/SarahChieng) for the best [Exa AI](https://twitter.com/ExaAILabs) API support🔥, and [Kevin Leffew](https://twitter.com/kleffew94) for the idea
 
 
 
